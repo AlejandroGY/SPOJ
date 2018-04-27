@@ -43,7 +43,6 @@ int main( ) {
 	for (long long i = 0; i < m; ++i) {
 		char op;
 		std::cin >> op;
-
 		if (op == 'q') {
 			long long ini, fin;
 			std::cin >> ini >> fin;
