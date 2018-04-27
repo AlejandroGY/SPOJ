@@ -69,8 +69,7 @@ int main( ) {
 				std::cout << arbol.get(x1, y1, x2, y2) << "\n";
 			} else if (op == "SET") {
 				int x, y, num;
-				std::cin >> x >> y >> num;
-				
+				std::cin >> x >> y >> num;			
 				arbol.update(x, y, -arbol.get(x, y, x, y));
 				arbol.update(x, y, num);
 			}
