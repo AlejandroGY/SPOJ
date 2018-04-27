@@ -32,7 +32,6 @@ int main( ) {
 	std::cin >> n;
 
 	fenwick_tree arbol(n + 2);
-
 	for (long long i = 1; i <= n; ++i) {
 		long long t;
 		std::cin >> t;
