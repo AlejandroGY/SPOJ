@@ -13,23 +13,6 @@ ll a, b, c;
 ll v[MAX];
 node ST[4 * MAX];
 
-void merge(ll m[], ll left[], ll right[], ll ti, ll td) {
-	ll i = 0, j = 0, k = 0;
-	while (i < ti && j < td) {
-		if (left[i] < right[j]) {
-			m[k++] = left[i++];
-		} else {
-			m[k++] = right[j++];
-		}
-	}
-	while (i < ti) {
-		m[k++] = left[i++];
-	}
-	while (j < td) {
-		m[k++] = right[j++];
-	}
-}
-
 void build(ll ini, ll fin, ll nodo) {
 	if (ini == fin) {
 		ST[nodo].arr = new ll[1];
@@ -47,7 +30,7 @@ void build(ll ini, ll fin, ll nodo) {
 	
 	ST[nodo].arr = new ll[ST[left].tam + ST[right].tam];
 	ST[nodo].tam = ST[left].tam + ST[right].tam;
-	merge(ST[nodo].arr, ST[left].arr, ST[right].arr, ST[left].tam, ST[right].tam);
+	std::merge(ST[left].arr, ST[left].arr + ST[left].tam, ST[right].arr, ST[right].arr + ST[right].tam, ST[nodo].arr);
 }
 
 ll query(ll ini, ll fin, ll nodo) {
